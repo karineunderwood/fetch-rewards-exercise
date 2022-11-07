@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Add Points {% endblock %} 
+        {% block body %}
+        <form action="/add-transactions" method="POST">
+            <label for="payer-input">Payer:</label>
+            <input type="text" name="Payer" id="payer-input" />
+        
+            <label for="points-input">Points:</label>
+            <input type="number" name="Points" id="points-input" />
+        
+            <input type="submit" />
+        </form>
+        {% endblock %}
+        {% block after_body %}{% endblock %}
+        
+    </body>
+</html>
