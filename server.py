@@ -33,7 +33,7 @@ def add_transactions():
         payer = request.form.get("Payer")
         points = request.form.get("Points") 
 
-        transaction = {"Payer": payer.upper(), "Point": points, "Timestamp": datetime.now()}
+        transaction = {"Payer": payer.upper(), "Point": int(points), "Timestamp": datetime.now()}
         TRANSACTIONS.append(transaction)
         print(TRANSACTIONS)
 
@@ -49,15 +49,36 @@ def spend_points():
 @app.route("/spend-points", methods=["POST"])
 def store_points():
     """This allows users to request points to spend."""
+    history_of_payers = []
     if request.method == "POST":
-        spend_points = request.form.get("Points-spend")
-
+        points_requested = request.form.get("Points-spend")
+        points_requested = int(points_requested)
+    
+        for i in range(len(TRANSACTIONS)):
+            if TRANSACTIONS[i]["Point"] >= points_requested:
+                TRANSACTIONS[i]["Point"] -= points_requested
+                history_of_payers.append({"Payer": TRANSACTIONS[i]["Payer"], "Points": -points_requested})
+                break
+            else:
+                points_requested -= TRANSACTIONS[i]["Point"]
+                history_of_payers.append({"Payer": TRANSACTIONS[i]["Payer"], "Points": -TRANSACTIONS[i]["Point"]})
+                TRANSACTIONS[i]["Point"] = 0
+        print(history_of_payers)
+        print(TRANSACTIONS)
         
 
-        print(TRANSACTIONS)
+        
     return render_template("spend-points.html")
         
+@app.route("/show-balance")
+def show_balance():
 
+    remainder_balance = {}
+
+    for i in TRANSACTIONS:
+        remainder_balance[i["Payer"]] = i["Point"]
+
+    return render_template("show-balance.html", remainder_balance=remainder_balance)    
 
 
 

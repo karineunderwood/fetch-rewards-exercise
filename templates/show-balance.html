@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %} Show Balance {% endblock %} 
+
+{% block body %}
+
+{% for payer, point in remainder_balance.items() %}
+<p>{{payer}}:{{point}}</p>
+{% endfor %}
+
+{% endblock %}
