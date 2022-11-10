@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +11,38 @@
         </title>
         {% block head %}{% endblock %}
     </head>
-    {% block body %}{% endblock %}
+    {% block body %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Fetch Rewards</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/add-transactions">Add Transactions <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/spend-points">Fetch Points</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/show-balance">Show Balance</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
+      
+    {% endblock %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <p class=flashes>
+      {% for message in messages %}
+        {{ message }}
+        </p>
+      {% endfor %}
+      
+    {% endif %}
+  {% endwith %}
     {% block after_body %}{% endblock %}
 </html>

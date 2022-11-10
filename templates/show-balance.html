@@ -2,9 +2,10 @@
 {% block title %} Show Balance {% endblock %} 
 
 {% block body %}
+<div class="container-fluid"> This route shows all points from each payer. </div>
 
 {% for payer, point in remainder_balance.items() %}
-<p>{{payer}}:{{point}}</p>
+<li>{{payer}}:{{point}}</li>
 {% endfor %}
 
 {% endblock %}

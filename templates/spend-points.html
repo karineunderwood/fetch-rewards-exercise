@@ -2,6 +2,8 @@
 {% block title %} Spend Points {% endblock %} 
 
 {% block body %} 
+<div class="container-fluid"> This route allows to request the amount of points to spend. </div>
+<br>
 <form action="/spend-points" method="POST">
     <label for="point-input">How much would you like to fetch? </label>
     <input type="number" name="Points-spend" id="point-input" />
@@ -10,5 +12,7 @@
 
     <input type="submit" />
 </form>
+
+
     {% endblock %}
     

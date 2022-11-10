@@ -35,7 +35,11 @@ def add_transactions():
 
         transaction = {"Payer": payer.upper(), "Point": int(points), "Timestamp": datetime.now()}
         TRANSACTIONS.append(transaction)
+
+    
+
         print(TRANSACTIONS)
+        
 
     return render_template("add-transactions.html")
 
@@ -50,21 +54,21 @@ def spend_points():
 def store_points():
     """This allows users to request points to spend."""
     history_of_payers = []
-    if request.method == "POST":
-        points_requested = request.form.get("Points-spend")
-        points_requested = int(points_requested)
+    # if request.method == "POST":
+    points_requested = request.form.get("Points-spend")
+    points_requested = int(points_requested)
     
-        for i in range(len(TRANSACTIONS)):
-            if TRANSACTIONS[i]["Point"] >= points_requested:
-                TRANSACTIONS[i]["Point"] -= points_requested
-                history_of_payers.append({"Payer": TRANSACTIONS[i]["Payer"], "Points": -points_requested})
-                break
-            else:
-                points_requested -= TRANSACTIONS[i]["Point"]
-                history_of_payers.append({"Payer": TRANSACTIONS[i]["Payer"], "Points": -TRANSACTIONS[i]["Point"]})
-                TRANSACTIONS[i]["Point"] = 0
-        print(history_of_payers)
-        print(TRANSACTIONS)
+    for i in range(len(TRANSACTIONS)):
+        if TRANSACTIONS[i]["Point"] >= points_requested:
+            TRANSACTIONS[i]["Point"] -= points_requested
+            history_of_payers.append({"Payer": TRANSACTIONS[i]["Payer"], "Points": -points_requested})
+            break
+        else:
+            points_requested -= TRANSACTIONS[i]["Point"]
+            history_of_payers.append({"Payer": TRANSACTIONS[i]["Payer"], "Points": -TRANSACTIONS[i]["Point"]})
+            TRANSACTIONS[i]["Point"] = 0
+    print(history_of_payers)
+    print(TRANSACTIONS)
         
 
         

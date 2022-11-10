@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block title %} Add Points {% endblock %} 
         {% block body %}
+        <div class="container-fluid">This route allows to add payer and amount of points fo each transaction.</div>
+        <br>
         <form action="/add-transactions" method="POST">
             <label for="payer-input">Payer:</label>
             <input type="text" name="Payer" id="payer-input" />
