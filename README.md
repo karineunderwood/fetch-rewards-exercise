@@ -24,22 +24,33 @@ Oldest points are spent first accordingly in their transaction's timestamp, rega
 - Bootstrap (only used for readability of the routes)
 
 ## Features
+
 Show all routes
+
 ![All Routes](README-img/Routes-fetchrewards.jpg)
 
 
-Add Transactions 
+Add Transactions
+
 ![Add Transactions](README-img/add-transaction-route.jpg)
+
 Add Response:
+
 ![Add Response](README-img/add-response.jpg)
 
 Spend Points
+
 ![Spend Points](README-img/spend-route.jpg)
+
 Spend Points Response:
+
 Here you can see a list from the spend call
+
 ![Spend Response](README-img/spend-response.jpg)
 
 Show Remainder Balance
+
 Here is the final balance
+
 ![Show Remainder Balance](README-img/final-balance.jpg)
 
