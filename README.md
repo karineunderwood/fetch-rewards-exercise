@@ -27,32 +27,37 @@ Oldest points are spent first accordingly in their transaction's timestamp, rega
 
 Show all routes
 
-![All Routes](README-img/Routes-fetchrewards.jpg)
+![All Routes](README-img/all-routes.jpg)
 
 
 Add Transactions
+### POST Route "/add-transactions"
+You can click directly on the nav bar on "add transactions" or type after the "/" add-transactions. We will be using the frontend to make the API calls. 
 
 ![Add Transactions](README-img/add-transaction-route.jpg)
 
 Add Response:
+The response will be delivered on the backend. Note that this web service does not use any durable data store. So when the server is started there's no data in the backend, which means that there will not be any payer transactions nor either points for the user. 
 
 ![Add Response](README-img/add-response.jpg)
 
 Spend Points
+### POST Route "/spend-points"
 
 ![Spend Points](README-img/spend-route.jpg)
 
-Spend Points Response:
+Spend Points Response on the backend:
 
 Here you can see a list from the spend call
 
 ![Spend Response](README-img/spend-response.jpg)
 
 Show Remainder Balance
+### GET Route "/show-balance"
 
 Here is the final balance
 
-![Show Remainder Balance](README-img/final-balance.jpg)
+![Show Remainder Balance](README-img/show-final-balance.jpg)
 
 ## Setup/Installation
 #### Requirements:
