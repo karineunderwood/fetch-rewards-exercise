@@ -31,18 +31,7 @@
           </ul>
         </div>
       </nav>
-
-      
     {% endblock %}
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-      <p class=flashes>
-      {% for message in messages %}
-        {{ message }}
-        </p>
-      {% endfor %}
-      
-    {% endif %}
-  {% endwith %}
+
     {% block after_body %}{% endblock %}
 </html>

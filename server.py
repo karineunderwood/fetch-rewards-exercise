@@ -67,8 +67,8 @@ def store_points():
             points_requested -= TRANSACTIONS[i]["Point"]
             history_of_payers.append({"Payer": TRANSACTIONS[i]["Payer"], "Points": -TRANSACTIONS[i]["Point"]})
             TRANSACTIONS[i]["Point"] = 0
-    print(history_of_payers)
-    print(TRANSACTIONS)
+    print(f"History of payers: {history_of_payers}")
+    print(f"List of payers and points: {TRANSACTIONS}")
         
 
         
