@@ -54,3 +54,36 @@ Here is the final balance
 
 ![Show Remainder Balance](README-img/final-balance.jpg)
 
+## Setup/Installation
+#### Requirements:
+- Python 3.9
+- Flask
+
+To have this app running on your local computer, please follow the steps bellow:
+Clone repository:
+```
+$ git clone https://github.com/karineunderwood/fetch-rewards-exercise.git
+```
+Create a virtual environment 🔮:
+```
+$ virtualenv env
+```
+$ source env/bin/activate
+```
+Install dependencies 🔗:
+```
+$ pip install -r requirements.txt
+```
+$ start the server
+```
+Run the app from the command line. 
+```
+$ python3 server.py
+```
+You terminal should read:
+```
+Running on http://172.20.47.174:5000
+```
+You should be able to click [Localhost](http://172.20.47.174:5000) and have access to the routes (add transaction, spend points and show balance).
+
+
