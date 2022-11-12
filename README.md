@@ -91,4 +91,16 @@ Running on http://172.20.47.174:5000
 ```
 You should be able to click [Localhost](http://172.20.47.174:5000) and have access to the routes (add transaction, spend points and show balance).
 
+## Running Tests
+### Please run tests in tests_server.py from project's main directory:
+```
+python3 tests_server.py -v
+```
+
+### Tests for:
+- Homepage
+- POST add transactions
+- POST spend points
+- GET show balance
+
 
