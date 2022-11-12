@@ -41,7 +41,8 @@ class FetchRewardsTests(TestCase):
 
         self.assertIn(b"payer", result.data)
 
-    
+    def tearDown(self) -> None:
+        return super().tearDown()
 
 
 if __name__ == "__main__":
