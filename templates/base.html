@@ -11,9 +11,9 @@
         </title>
         {% block head %}{% endblock %}
     </head>
-    {% block body %}
+    
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Fetch Rewards</a>
+        <a class="navbar-brand" href="/">Fetch Rewards</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,7 +32,7 @@
         </div>
       </nav>
       <h1>Hello There!!!</h1>
-    {% endblock %}
+      {% block body %}{% endblock %}
 
     {% block after_body %}{% endblock %}
 </html>
