@@ -54,7 +54,6 @@ def spend_points():
 def store_points():
     """This allows users to request points to spend."""
     history_of_payers = []
-    # if request.method == "POST":
     points_requested = request.form.get("Points-spend")
     points_requested = int(points_requested)
     
